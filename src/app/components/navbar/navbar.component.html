@@ -1,0 +1,18 @@
+<nav class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed':''">
+  <div class="logo-container">
+    <button class="logo" (click)="changeCollapsed()">B</button>
+    <div class="logo-text" *ngIf="collapsed">BookSearch</div>
+
+  </div>
+  <ul class="sidenav-nav">
+    <li *ngFor="let item of listOptions" class="sidenav-nav-item">
+      <a href="" class="sidenav-nav-link" [routerLink]="[item.rota]"
+        ><span class="material-icons">{{item.icone}}</span>
+        <span class="sidenav-link-text" *ngIf="collapsed">{{ item.linha }}</span>
+      </a>
+    </li>
+  </ul>
+  <!-- <div class="picture">
+    <h2>Imagem(Usuário)</h2>
+  </div> -->
+</nav>

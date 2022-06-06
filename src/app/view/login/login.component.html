@@ -1,0 +1,59 @@
+<main>
+
+  <section class="tela-login">
+    <h1>BookSearch</h1>
+    <div class="imagem">
+      <img src="../../../assets/book2-3.svg" width="100%" height="100%">
+    </div>
+    <div class="login">
+      <h2>Entrar</h2>
+      <form>
+        <div class="mb-3">
+          <label for="inputUsername" class="form-label" >Usuário</label>
+          <input type="text" class="form-control" id="input_Username" aria-describedby="usernameHelp" [(ngModel)] = "username" name="username">
+
+        </div>
+        <div class="mb-3">
+          <label for="inputPassword" class="form-label" >Senha</label>
+          <input type="password" class="form-control" id="input_Password" [(ngModel)] = "password" name="password">
+        </div>
+        <a href="#">Esqueceu a senha?</a>
+
+        <button type="submit" class="btn btn-primary" (click)="login()" routerLink="/homepage" >Entrar</button>
+      </form>
+
+
+    </div>
+  </section>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

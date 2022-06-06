@@ -1,0 +1,89 @@
+
+$color1: #f8cdda
+$color2: #1d2b64
+$list: $color1, $color2
+$font-family: 'Poppins', sans-serif
+*
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+  font-family: $font-family
+
+main
+
+  background: linear-gradient(to right, $list)
+  height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+
+.tela-login
+
+  background-color: white
+
+  height: 80vh
+  width: 100vh
+  border-radius: 15vh
+  display: flex
+  justify-content: space-around
+  align-items: center
+
+.imagem
+
+  height: 45vh
+  width: 45vh
+  border-radius: 5vh
+
+.login, form
+
+  height: 40vh
+  width: 30vh
+  border-radius: 5vh
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  align-items: center
+
+input
+
+  border-radius: 10px
+  padding: 1.5vh
+
+  border-style: none
+  outline: none
+  background-color: rgba(128, 128, 128, 0.444)
+
+button
+
+  border-style: none
+  background-color: #51425f
+  width: 18vh
+  height: 6vh
+  border-radius: 15px
+  color: white
+
+  &:hover
+
+    background-color: #ae8fba
+
+    transition: ease-in-out 300ms
+
+a
+  text-decoration: none
+  color: black
+
+  &:hover
+
+    color: #51425f
+    transition: ease-in-out 300ms
+
+h2
+
+  margin-top: 15px
+  font-weight: 700
+
+h1
+
+  position: absolute
+  top: 15vh
+  font-weight: bold

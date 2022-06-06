@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bookSearch-app';
+
+
+  @Input() collapsed = false;
+  @Input() screenWidth = 0;
+
+
+  getMainClass(): string{
+    let styleClass='';
+    if(this.collapsed && this.screenWidth > 768){
+      styleClass = 'body-trimmed';
+    } else if(this.collapsed && this.screenWidth <= 768 && this.screenWidth > 0){
+      styleClass = 'body-md-screen'
+    }
+    return '';
+  }
 }
