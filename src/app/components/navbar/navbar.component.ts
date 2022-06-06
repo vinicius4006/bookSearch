@@ -24,6 +24,7 @@ export class NavbarComponent implements OnInit {
   collapsed = false;
   screenWidht = 0;
   ngOnInit(): void {
+    this.screenWidht = window.innerWidth;
   }
 
 

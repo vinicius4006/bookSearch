@@ -1,13 +1,16 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  selector: 'app-body',
+  templateUrl: './app-body.component.html',
+  styleUrls: ['./app-body.component.sass']
 })
-export class AppComponent {
-  title = 'bookSearch-app';
+export class AppBodyComponent implements OnInit {
 
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 
   @Input() collapsed = false;
   @Input() screenWidth = 0;
@@ -22,4 +25,5 @@ export class AppComponent {
     }
     return '';
   }
+
 }

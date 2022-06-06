@@ -7,6 +7,8 @@
   <ul class="sidenav-nav">
     <li *ngFor="let item of listOptions" class="sidenav-nav-item">
       <a href="" class="sidenav-nav-link" [routerLink]="[item.rota]"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}"
         ><span class="material-icons">{{item.icone}}</span>
         <span class="sidenav-link-text" *ngIf="collapsed">{{ item.linha }}</span>
       </a>

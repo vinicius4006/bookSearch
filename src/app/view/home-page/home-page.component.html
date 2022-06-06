@@ -2,9 +2,10 @@
   <div class="div-first">
     <app-navbar (onToggleSideNav)="onToggleSideNav($event)"></app-navbar>
     <div class="screenShow">
-      <app-dashboard></app-dashboard>
-
+      <app-body
+      [collapsed]="isSideNavCollapsed"
+      [screenWidth]="screenWidth"
+      ></app-body>
     </div>
-
   </div>
 </main>
