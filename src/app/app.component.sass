@@ -16,3 +16,43 @@
 // .body-md-screen
 //   width: calc(100% - 5rem)
 //   margin-left: 5rem
+
+$color1: #f8cdda
+$color2: #1d2b64
+$list: $color1, $color2
+$font-family: 'Poppins', sans-serif
+*
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+  font-family: $font-family
+
+main
+
+  background: linear-gradient(to right, $list)
+  height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+
+.div-first
+  display: flex
+  justify-content: space-between
+  align-items: center
+  width: 95%
+  height: 95%
+  background: #eee8e8
+  border-radius: 6vh
+
+.screenShow
+  background: #f8cdda
+  display: flex
+  justify-content: center
+  align-items: center
+
+  max-width: 140vh
+  max-height: 90vh
+  width: 140vh
+  height: 90vh
+  border-radius: 5vh
+  margin-right: 10vh

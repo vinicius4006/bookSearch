@@ -15,17 +15,15 @@ const routes: Routes = [
     path:'login', component: LoginComponent
   },
   {
-    path:'homepage', component: HomePageComponent
+    path:'homepage', component: HomePageComponent,
+    children: [
+      { path: 'funcionarios', component: FuncionariosComponent},
+      {path: 'configuracoes', component: ConfiguracoesComponent},
+      {path: 'dashboard', component: DashboardComponent},
+
+    ]
   },
-  {
-    path:'dashboard', component: DashboardComponent
-  },
-  {
-    path:'funcionarios', component: FuncionariosComponent
-  },
-  {
-    path:'configuracoes', component: ConfiguracoesComponent
-  }
+
 
 ];
 

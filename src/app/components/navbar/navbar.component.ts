@@ -15,9 +15,10 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   listOptions: NavBarOption[] = [
-    new NavBarOption("Dashboard", "home","homepage"),
+    new NavBarOption("Dashboard", "home","dashboard"),
     new NavBarOption("Funcionários", "group","funcionarios"),
-    new NavBarOption("Configurações", "settings_suggest","configuracoes")
+    new NavBarOption("Configurações", "settings_suggest","configuracoes"),
+    new NavBarOption("Sair", "logout","")
   ];
 
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter;

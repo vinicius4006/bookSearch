@@ -13,7 +13,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FuncionariosComponent } from './components/funcionarios/funcionarios.component';
 import { ConfiguracoesComponent } from './components/configuracoes/configuracoes.component';
-import { AppBodyComponent } from './components/app-body/app-body.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { AppBodyComponent } from './components/app-body/app-body.component';
     DashboardComponent,
     FuncionariosComponent,
     ConfiguracoesComponent,
-    AppBodyComponent
+
 
 
 
