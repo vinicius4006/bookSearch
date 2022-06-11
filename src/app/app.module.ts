@@ -13,6 +13,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FuncionariosComponent } from './components/funcionarios/funcionarios.component';
 import { ConfiguracoesComponent } from './components/configuracoes/configuracoes.component';
+import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { ConfiguracoesComponent } from './components/configuracoes/configuracoes
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    NgChartsModule
 
   ],
   providers: [],

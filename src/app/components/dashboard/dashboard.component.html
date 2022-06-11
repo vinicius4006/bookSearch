@@ -2,12 +2,19 @@
   <div class="column1">
     <h1>Bem-vindo ao <span class="text"> Dashboard</span></h1>
     <div class="graph-funcionario">
+
       <span>Funcionários</span>
       <div class="numeros-funcionarios">Números</div>
     </div>
     <div class="graph-livros">
-      <span>Disponibilidade dos Livros</span>
-      <div class="numeros-funcionarios">Números</div>
+      <canvas baseChart
+[data] = 'salesData'
+[type] = "'pie'"
+[options]= 'chartOptions'
+>
+
+</canvas>
+
     </div>
   </div>
   <div class="column2">
