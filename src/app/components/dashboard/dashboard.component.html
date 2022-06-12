@@ -3,14 +3,15 @@
     <h1>Bem-vindo ao <span class="text"> Dashboard</span></h1>
     <div class="graph-funcionario">
 
-      <span>Funcionários</span>
-      <div class="numeros-funcionarios">Números</div>
+      <span class="func-nome">Funcionários</span>
+      <span class="numeros-funcionarios">80</span>
     </div>
     <div class="graph-livros">
       <canvas baseChart
-[data] = 'salesData'
+[data] = 'livrosDados'
 [type] = "'pie'"
 [options]= 'chartOptions'
+
 >
 
 </canvas>
@@ -19,15 +20,26 @@
   </div>
   <div class="column2">
     <div class="criar-e-hora">
-      <span>Hora</span>
-      <button>Cadastrar Funcionário</button>
+      <span class="time-text">{{time}}</span>
+
     </div>
    <div class="grafico-graus">
-     <span>bloco</span>
+    <canvas baseChart
+    [data] = 'grauAtividades'
+    [type] = "'bar'"
+    [options]= 'grauOptions'
+
+    >
+
+    </canvas>
    </div>
 
    <div class="grafico-generos">
-     <span>generos</span>
+    <canvas baseChart
+    [data]="polarAreaChartData"
+    [legend]="polarAreaLegend"
+    [type]="polarAreaChartType">
+  </canvas>
    </div>
 
   </div>

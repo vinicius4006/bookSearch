@@ -3,7 +3,7 @@
   display: flex
   flex-direction: column
   justify-content: space-between
-
+  align-items: center
 
 .dashboard
   width: 125vh
@@ -13,11 +13,50 @@
   .column1
     height: 80vh
     @include organizableLayout
+    .graph-funcionario
+      background: white
+      box-shadow: 60px -16px #f8a9c1
+      width: 60%
+      height: 30%
+      border-radius: 10px
+      display: flex
+      flex-direction: column
+
+      align-items: center
+      .func-nome
+        font-style: oblique
+        font-size: 40px
+        font-weight: 700
+        margin-top: 15px
+
+      .numeros-funcionarios
+        font-size: 100px
+        font-weight: 600
+        color: #ef799d
 
     .text
       font-weight: 700
 
   .column2
     @include organizableLayout
+    .criar-e-hora
+      display: flex
+      width: 100%
+      justify-content: space-between
 
+      .time-text
+        font-size: 45px
+        font-weight: 600
+        padding: 15px
+        position: absolute
+        right: 30vh
+        border-radius: 15px
+        background-color: #f896b3
+        color: white
 
+  .grafico-graus
+    margin-top: 5.2vh
+    width: 55vh
+
+  .grafico-generos
+    width: 35vh
