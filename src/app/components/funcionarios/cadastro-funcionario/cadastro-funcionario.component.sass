@@ -1,10 +1,22 @@
 .dialog
-  width: 100%
+  width: 70vh
   height: 50vh
   display: flex
   flex-direction: column
-  align-items: center
-
+  justify-content: space-between
+  .title
+    color: #ca6886
+    font-family: 'Raleway',sans-serif
+    font-size: 50px
+    font-weight: 800
+    line-height: 72px
+    margin: 0 0 24px
+    text-align: center
+    text-transform: uppercase
+  .orgField
+    width: 100%
+    display: flex
+    justify-content: space-around
 
 .button-cadastrar
 
@@ -21,6 +33,7 @@
   backface-visibility: hidden
   border: 0.3rem solid transparent
   border-radius: 3rem
+
   &
     border-color: #fff
     transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95)

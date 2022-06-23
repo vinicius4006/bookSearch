@@ -19,9 +19,8 @@
         </div>
         <a href="#">Esqueceu a senha?</a>
 
-        <button type="submit" class="btn btn-primary" (click)="login()" routerLink="/homepage/dashboard" >Entrar</button>
+        <button type="submit" (click)="login()"><div class="{{loading ? 'spinner-border text-light' : ''}}">{{!loading ? 'Entrar' : ''}}</div></button>
       </form>
-
 
     </div>
   </section>

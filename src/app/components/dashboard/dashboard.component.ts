@@ -1,3 +1,4 @@
+import { APIService } from './../../services/api.service';
 import {
   ChartData,
   ChartEvent,
@@ -12,6 +13,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.sass'],
 })
 export class DashboardComponent implements OnInit, OnDestroy {
+  quantFunc: number = 0;
   livrosDados: ChartData<'pie'> = {
     labels: ['Disponíveis', 'Alugados', 'Indisponíveis'],
     datasets: [
@@ -69,7 +71,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   // }
   time: string = '00:00:00';
 
-  constructor() {}
+  constructor(private service: APIService) {}
   ngOnDestroy(): void {
     console.log('OnDestroy Dashboard');
   }
@@ -80,5 +82,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
       const date = new Date();
       this.time = `${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()}`;
     }, 1000);
+    this.service.pegarFuncionarios().subscribe((data) => {
+      this.quantFunc = data.length
+    })
   }
 }
