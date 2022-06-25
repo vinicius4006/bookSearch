@@ -7,12 +7,9 @@
 </mat-form-field>
  <mat-form-field appearance="fill">
   <mat-label>Senha</mat-label>
-  <input matInput type="password" required="true" name="senha" [(ngModel)]="funcionario.senha">
+  <input matInput type="text" required="true" name="senha" [(ngModel)]="funcionario.senha">
 </mat-form-field>
-<mat-form-field appearance="fill">
-  <mat-label>Telefone</mat-label>
-  <input matInput required="true" name="tel" [(ngModel)]="funcionario.telefone">
-</mat-form-field>
+
   </div>
   <div class="orgField">
      <mat-form-field appearance="fill">
@@ -20,19 +17,15 @@
   <input matInput required="true" name="nome" [(ngModel)]="funcionario.nome">
 </mat-form-field>
 
-
-
-  <mat-form-field appearance="fill">
-  <mat-label>CPF</mat-label>
-  <input matInput required="true" name="cpf" [(ngModel)]="funcionario.cpf">
+<mat-form-field appearance="fill">
+  <mat-label>Usuário</mat-label>
+  <input matInput required="true" name="usuario" [(ngModel)]="funcionario.usuario">
 </mat-form-field>
+
   </div>
 
   <div class="orgField">
-    <mat-form-field appearance="fill">
-  <mat-label>Endereço</mat-label>
-  <textarea matInput required="true" name="endereco" [(ngModel)]="funcionario.endereco"></textarea>
-</mat-form-field >
+
 <mat-form-field appearance="fill">
   <mat-label>Prioridade</mat-label>
   <mat-select required="true" name="prioridade" [(ngModel)]="funcionario.prioridade">

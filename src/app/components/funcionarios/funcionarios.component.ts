@@ -7,6 +7,7 @@ import {MatSort} from '@angular/material/sort';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Funcionario } from 'src/app/models/funcionario/funcionario';
 import { map } from 'rxjs/operators';
+import Swal from 'sweetalert2';
 
 
 
@@ -18,7 +19,7 @@ import { map } from 'rxjs/operators';
 })
 export class FuncionariosComponent implements OnInit, OnDestroy {
 
-  displayedColumns: string[] = ['id', "nome", "email", "telefone", "actions"];
+  displayedColumns: string[] = ['id', "nome", "email", "usuario", "actions"];
   dataSource: MatTableDataSource<Funcionario>;
   stringObject: any;
   stringJson: any;
@@ -33,9 +34,9 @@ export class FuncionariosComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     console.log('Build Funcionários');
-    this.service.pegarFuncionarios().subscribe(data => {
+    this.service.pegarFuncionarios().subscribe((data: any) => {
 
-      this.stringJson = JSON.stringify(data);
+      this.stringJson = JSON.stringify(data[0]['results']);
       this.stringObject = JSON.parse(this.stringJson)
       console.log(this.stringObject)
 
@@ -64,7 +65,31 @@ export class FuncionariosComponent implements OnInit, OnDestroy {
     }
   }
 
+deletarFuncionario(id: number){
 
+Swal.fire({
+  title: 'Você tem certeza?',
+  text: "Não será mais possível recuperar",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Deletar'
+}).then((result) => {
+  if (result.isConfirmed) {
+    this.service.deletarFuncionarios(id);
+    Swal.fire(
+      'Deletado!',
+      'Funcionário removido com sucesso!',
+      'success'
+    )
+    setTimeout(() => {
+      window.location.reload();
+    }, 1600);
+  }
+})
+
+}
 
 
 

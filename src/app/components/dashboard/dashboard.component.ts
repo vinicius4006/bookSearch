@@ -82,8 +82,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
       const date = new Date();
       this.time = `${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()}`;
     }, 1000);
-    this.service.pegarFuncionarios().subscribe((data) => {
-      this.quantFunc = data.length
+    this.service.pegarFuncionarios().subscribe((data: any) => {
+      console.log(data)
+      this.quantFunc = data[0]['results'].length
     })
   }
 }

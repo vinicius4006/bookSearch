@@ -1,4 +1,4 @@
 export interface Login {
-  email: string,
+  usuario: string,
   senha: string
 }

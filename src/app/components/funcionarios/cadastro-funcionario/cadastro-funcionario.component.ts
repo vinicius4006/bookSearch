@@ -2,6 +2,7 @@ import { Funcionario } from 'src/app/models/funcionario/funcionario';
 import { APIService } from './../../../services/api.service';
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'cadastro-funcionario',
@@ -9,21 +10,13 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./cadastro-funcionario.component.sass'],
 })
 export class CadastroFuncionarioComponent implements OnInit {
-  // email: string = '';
-  // nome: string = '';
-  // endereco: string = '';
-  // senha: string = '';
-  // cpf: string = '';
-  // prioridade: string = '';
-  // tel: string = '';
   funcionario: Funcionario = {
+    id: 0,
     nome: '',
     email: '',
-    cpf: '',
-    endereco: '',
+    usuario: '',
     prioridade: '',
     senha: '',
-    telefone: '',
   };
   id: any;
   mudarTitulo: boolean = false;
@@ -37,31 +30,35 @@ export class CadastroFuncionarioComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if( this.id != null){
-       this.servive.pegarFuncionarios(Number(this.id)).subscribe((resp) => {
-      this.funcionario = resp[0];
-      this.mudarTitulo = true;
-    });
+    if (this.id != null) {
+      this.servive.pegarFuncionarios(Number(this.id)).subscribe((resp: any) => {
+        this.funcionario = resp[0]['results'][0];
+        this.mudarTitulo = true;
+      });
     }
-
   }
   submitForm() {
-    console.log(this.funcionario);
-    // if((this.email && this.nome && this.endereco && this.senha && this.cpf && this.prioridade && this.tel) !== ''){
-    //   let func: Funcionario = {
-    //     id: 0,
-    //     email: this.email,
-    //     nome: this.nome,
-    //     endereco: this.endereco,
-    //     senha: this.senha,
-    //     cpf: this.cpf,
-    //     prioridade: this.prioridade,
-    //     telefone: this.tel
-    //   }
-    //   let res = this.servive.salvarFuncionarios(func);
-    //   console.log(res);
-    // }else {
-    //   console.log("Preencha todos")
-    // }
+    if (
+      (this.funcionario.nome &&
+        this.funcionario.email &&
+        this.funcionario.senha &&
+        this.funcionario.usuario &&
+        this.funcionario.prioridade) !== ''
+    ) {
+      this.servive.salvarFuncionarios(this.funcionario)
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: `Funcionário ${this.mudarTitulo ? 'editado' : 'cadastrado'} com sucesso`,
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      this.dialogRef.close();
+      setTimeout(() => {
+        window.location.reload();
+      }, 1600);
+    } else {
+      console.log('Campos incompletos');
+    }
   }
 }

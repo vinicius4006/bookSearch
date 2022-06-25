@@ -5,10 +5,8 @@ export interface Funcionario {
   email: string,
   nome: string,
   tempoCriado?: Date,
-  telefone: string,
+  usuario: string,
   senha: string,
-  cpf: string,
-  endereco: string,
   prioridade: string
 
 }
